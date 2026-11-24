@@ -53,6 +53,7 @@ public class Program {
 //        return matches;
 
         // STEP B (stream): products.stream(), then .filter(...), then .toList()
+
         return products.stream()
                 .filter(product -> product.getCategory().equalsIgnoreCase(category))
                 .toList();
@@ -78,18 +79,22 @@ public class Program {
     private static long countProductsInCategory(List<Product> products, String category) {
         // STEP A (loop): a count that starts at 0, plus 1 for each match
 
-        long count = 0;
-
-        for (Product product : products) {
-
-            if (product.getCategory().equalsIgnoreCase(category)) {
-                count++;
-            }
-        }
-
-        return count;
+//        long count = 0;
+//
+//        for (Product product : products) {
+//
+//            if (product.getCategory().equalsIgnoreCase(category)) {
+//                count++;
+//            }
+//        }
+//
+//        return count;
 
         // STEP B (stream): .filter(...), then .count()
+
+        return products.stream()
+                .filter(product -> product.getCategory().equalsIgnoreCase(category))
+                .count();
     }
 
     // TASK 4: a list of just the prices
