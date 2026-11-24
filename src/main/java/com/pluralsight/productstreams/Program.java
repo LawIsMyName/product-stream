@@ -101,16 +101,20 @@ public class Program {
     private static List<BigDecimal> getPrices(List<Product> products) {
         // STEP A (loop): an empty List<BigDecimal>; add each product's price
 
-        List<BigDecimal> prices = new ArrayList<>();
-
-        for (Product product : products) {
-            prices.add(product.getPrice());
-        }
-
-        return prices;
+//        List<BigDecimal> prices = new ArrayList<>();
+//
+//        for (Product product : products) {
+//            prices.add(product.getPrice());
+//        }
+//
+//        return prices;
 
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
         //   then .toList()
+
+        return products.stream()
+                .map(product -> product.getPrice())
+                .toList();
     }
 
     // TASK 5: print each product
