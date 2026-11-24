@@ -52,9 +52,7 @@ public class Program {
 
         return matches;
 
-
         // STEP B (stream): products.stream(), then .filter(...), then .toList()
-
     }
 
     // TASK 2: the total of every product's price
@@ -71,8 +69,6 @@ public class Program {
 
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
         //   then .reduce(BigDecimal.ZERO, ...) to add them up
-
-
     }
 
     // TASK 3: how many products are in one category
@@ -91,7 +87,6 @@ public class Program {
         return count;
 
         // STEP B (stream): .filter(...), then .count()
-
     }
 
     // TASK 4: a list of just the prices
@@ -108,8 +103,6 @@ public class Program {
 
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
         //   then .toList()
-
-
     }
 
     // TASK 5: print each product
@@ -121,7 +114,6 @@ public class Program {
         }
 
         // STEP B: products.forEach(...) with a lambda
-
     }
 
     private static List<Product> getInventory() {
