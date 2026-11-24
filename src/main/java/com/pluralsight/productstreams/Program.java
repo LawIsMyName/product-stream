@@ -54,9 +54,7 @@ public class Program {
 
         // STEP B (stream): products.stream(), then .filter(...), then .toList()
 
-        return products.stream()
-                .filter(product -> product.getCategory().equalsIgnoreCase(category))
-                .toList();
+        return products.stream().filter(product -> product.getCategory().equalsIgnoreCase(category)).toList();
     }
 
     // TASK 2: the total of every product's price
@@ -74,9 +72,7 @@ public class Program {
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
         //   then .reduce(BigDecimal.ZERO, ...) to add them up
 
-        return products.stream()
-                .map(product -> product.getPrice())
-                .reduce(BigDecimal.ZERO, (total, price) -> total.add(price));
+        return products.stream().map(product -> product.getPrice()).reduce(BigDecimal.ZERO, (total, price) -> total.add(price));
     }
 
     // TASK 3: how many products are in one category
@@ -96,9 +92,7 @@ public class Program {
 
         // STEP B (stream): .filter(...), then .count()
 
-        return products.stream()
-                .filter(product -> product.getCategory().equalsIgnoreCase(category))
-                .count();
+        return products.stream().filter(product -> product.getCategory().equalsIgnoreCase(category)).count();
     }
 
     // TASK 4: a list of just the prices
@@ -116,9 +110,7 @@ public class Program {
         // STEP B (stream, after Wednesday's demo): .map(...) each product to its price,
         //   then .toList()
 
-        return products.stream()
-                .map(product -> product.getPrice())
-                .toList();
+        return products.stream().map(product -> product.getPrice()).toList();
     }
 
     // TASK 5: print each product
