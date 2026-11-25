@@ -138,16 +138,18 @@ public class Program {
 
         // STEP A (loop): an empty List<String>; add the name of each product whose price
         //   is less than limit (compareTo)
-        List<String> names = new ArrayList<>();
+//        List<String> names = new ArrayList<>();
 
-        for (Product product : products) {
-            if (product.getPrice().compareTo(new BigDecimal("50")) < 0) {
-                names.add(product.getName());
-            }
-        }
+//        for (Product product : products) {
+//            if (product.getPrice().compareTo(new BigDecimal("50")) < 0) {
+//                names.add(product.getName());
+//            }
+//        }
 
-        return names;
+//        return names;
         // STEP B (stream): .filter(...), then .map(...) each product to its name, then .toList()
+
+        return products.stream().filter(product -> product.getPrice().compareTo(new BigDecimal("50")) < 0).map(product -> product.getName()).toList();
 
     }
 
