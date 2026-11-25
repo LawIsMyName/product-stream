@@ -150,7 +150,7 @@ public class Program {
         // STEP B (stream): .filter(...), then .map(...) each product to its name, then .toList()
 
         return products.stream().filter(product -> product.getPrice().compareTo(new BigDecimal("50")) < 0).map(product -> product.getName()).toList();
-
+        
     }
 
     // TASK 7 (optional): the products from cheapest to most expensive
