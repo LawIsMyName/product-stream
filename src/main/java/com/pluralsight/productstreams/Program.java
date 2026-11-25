@@ -37,7 +37,7 @@ public class Program {
 
         // 6 (optional). The names of the products under a price
         BigDecimal limit = new BigDecimal("50.00");
-        System.out.println("\nUnder $" + limit + ": " + getNamesUnder(inventory, limit));
+        System.out.println("\nUnder $" + limit + ": " + getProductNamesUnder50(inventory, limit));
 
         // 7 (optional). Cheapest to most expensive
         System.out.println("\n--- Cheapest first ---");
@@ -134,12 +134,21 @@ public class Program {
     }
 
     // TASK 6 (optional): the names of the products under a price
-    private static List<String> getNamesUnder(List<Product> products, BigDecimal limit) {
+    private static List<String> getProductNamesUnder50(List<Product> products, BigDecimal limit) {
+
         // STEP A (loop): an empty List<String>; add the name of each product whose price
         //   is less than limit (compareTo)
+        List<String> names = new ArrayList<>();
+
+        for (Product product : products) {
+            if (product.getPrice().compareTo(new BigDecimal("50")) < 0) {
+                names.add(product.getName());
+            }
+        }
+
+        return names;
         // STEP B (stream): .filter(...), then .map(...) each product to its name, then .toList()
 
-        return new ArrayList<>(); // replace this line
     }
 
     // TASK 7 (optional): the products from cheapest to most expensive
